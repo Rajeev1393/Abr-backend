@@ -14,6 +14,8 @@ router.use(authenticate, authorize("admin"));
 router.get("/overview", asyncHandler(adminController.overview));
 router.get("/categories", asyncHandler(adminController.listCategories));
 router.post("/categories", asyncHandler(adminController.createCategory));
+router.patch("/categories/:name", asyncHandler(adminController.updateCategoryPrice));
+router.delete("/categories/:name", asyncHandler(adminController.deleteCategory));
 router.get("/professionals", asyncHandler(adminController.listProfessionals));
 router.post("/professionals", asyncHandler(adminController.createProfessional));
 router.delete("/professionals/:id", asyncHandler(adminController.deleteProfessional));
